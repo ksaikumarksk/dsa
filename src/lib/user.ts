@@ -1,0 +1,32 @@
+export interface User {
+  id: string
+  name: string
+  email: string
+  password: string 
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface Topic {
+  id: string
+  title: string
+  description: string
+  problems: Problem[]
+}
+
+export interface Problem {
+  id: string
+  title: string
+  description: string
+  youtubeLink: string
+  leetcodeLink: string
+  articleLink: string
+  difficulty: "Easy" | "Medium" | "Hard"
+}
+
+export interface UserProgress {
+  userId: string
+  completedProblems: {
+    [topicId: string]: string[] 
+  }
+}
