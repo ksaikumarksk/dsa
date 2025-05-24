@@ -34,10 +34,10 @@ export async function POST(req: NextRequest) {
       { message: "Atuh successful", token: token },
       { status: 200 }
     );
-
+    const isSecure = req.nextUrl.protocol === "https:";
      response.cookies.set("token", token, {
       httpOnly: true,
-      secure: process.env.PRO === "production",
+      secure: isSecure,
       maxAge: 60 * 60, 
     
     });
