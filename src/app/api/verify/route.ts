@@ -5,9 +5,7 @@ export async function GET(req: NextRequest) {
   try {
 
     console.log("all cookies",req.cookies.getAll())
-    console.log("JWT_Key", process.env.JWT_Key);
     const auth = req.cookies.get("token")?.value;
-    console.log("auth>>>", auth);
 
     if (!auth) {
       return NextResponse.json(
@@ -16,9 +14,8 @@ export async function GET(req: NextRequest) {
       );
     }
 
-    const decoded = jwt.verify(auth, process.env.JWT_Key as string);
+    const decoded = jwt.verify(auth, process.env.JWT_Key as string,{ algorithms: ["HS256"] });
     console.log("decoded>>>", decoded);
-
     return NextResponse.json(
       { status: 200, data: decoded },
       { status: 200 }

@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
         expiresIn: "1hr",
       }
     );
-    // console.log("token>>>", token);
+    console.log("token>>>", token);
     const response = NextResponse.json(
       { message: "Atuh successful", token: token },
       { status: 200 }
