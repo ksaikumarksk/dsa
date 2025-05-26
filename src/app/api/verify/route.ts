@@ -5,6 +5,7 @@ export async function GET(req: NextRequest) {
   try {
 
     console.log("all cookies",req.cookies.getAll())
+    console.log("JWT_Key", process.env.JWT_Key);
     const auth = req.cookies.get("token")?.value;
     console.log("auth>>>", auth);
 
