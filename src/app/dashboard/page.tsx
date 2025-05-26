@@ -100,7 +100,7 @@ export default function Dashboard() {
         
       } catch (error) {
         console.error("Auth verification error:", error)
-        router.push("/login")
+        // router.push("/login")
       } finally {
         setLoading(false)
       }

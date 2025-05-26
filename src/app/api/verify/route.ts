@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
+
+    console.log("all cookies",req.cookies.getAll())
     const auth = req.cookies.get("token")?.value;
     console.log("auth>>>", auth);
 
