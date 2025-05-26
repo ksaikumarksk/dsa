@@ -120,7 +120,7 @@ export default function Dashboard() {
     }
 
     setLoading(false)
-  }, [router,topics])
+  }, [])
 
   const handleLogout = async() => {
     try {
